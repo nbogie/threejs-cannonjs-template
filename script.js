@@ -1,9 +1,7 @@
 import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.122.0/examples/jsm/controls/OrbitControls.js';
-
 import { setupLights } from "./modules/lights.js";
 import { setupGround } from "./modules/ground.js";
-import { pick } from "./modules/random.js";
 import { InputManager } from "./modules/InputManager.js";
 
 import { setupPostProcessingComposer } from "./modules/postProcessing.js";
