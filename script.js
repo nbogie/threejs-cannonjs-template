@@ -7,22 +7,19 @@ import { pick } from "./modules/random.js";
 import { InputManager } from "./modules/InputManager.js";
 
 import { setupPostProcessingComposer } from "./modules/postProcessing.js";
-import { EffectComposer } from 'https://unpkg.com/three@0.122.0/examples/jsm/postprocessing/EffectComposer.js';
 import { setupPhysics, createCubeBody, createPlayingCardBody } from "./modules/physics.js";
-
 
 let physicsBoundMeshes = [];
 
-
 function changeTexture(mesh) {
   new THREE.TextureLoader().load(
-    "./textures/sweetie-16-1x.png",
+    "./textures/chirag_nayak.jpeg",
     texture => {
       //Update Texture
       mesh.material.map = texture;
       mesh.material.needsUpdate = true;
     });
-  //"https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  //"https://unsplash.com/photos/iZwQbx4T8bQ",
 }
 
 function r(v) {
@@ -37,11 +34,12 @@ function addPlayingCard(world, scene) {
   const pos = randomPosition(20);
 
   const geometry = new THREE.PlaneGeometry(2.5, 3.5, 1);
-  const material = new THREE.MeshLambertMaterial({ color: 0x00FF00, side: THREE.DoubleSide });
+  const material = new THREE.MeshLambertMaterial({ color: 0xDDDDDD, side: THREE.DoubleSide });
 
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
+  changeTexture(mesh);
   const body = createPlayingCardBody(world, mesh.position);
   body.position.copy(pos);
   physicsBoundMeshes.push({ mesh: mesh, body: body });

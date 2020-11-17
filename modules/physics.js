@@ -65,8 +65,8 @@ export function createCubeBody(world, pos) {
 
 
 export function createPlayingCardBody(world, pos) {
-    const cubeShape = new CANNON.Box(new CANNON.Vec3(2.5, 3.5, 0.1));
-    const cubeBody = new CANNON.Body({ mass: 0.4 });
+    const cubeShape = new CANNON.Box(new CANNON.Vec3(2.5, 3.5, 0.01));
+    const cubeBody = new CANNON.Body({ mass: 0.04 });
 
     cubeBody.position.set(pos.x, pos.y, pos.z);
 
